@@ -1,0 +1,9 @@
+<h2><%= @pizza.title %></h2>
+
+<h3><%= @pizza.author %></h3>
+
+<p><%= @pizza.description %></p>
+
+<%= link_to "Back", root_path %>
+<%= link_to "Edit", edit_pizza_path(@pizza) %>
+<%= link_to "Delete", pizza_path(@pizza), method: :delete, data: { confirm: "Are you sure?" } %>
