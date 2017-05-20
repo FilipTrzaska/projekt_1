@@ -1,5 +1,9 @@
-<% @pizzas.each do |pizza| %>
-    <h2><%= link_to pizza.title, pizza_path(pizza) %></h2>
-<% end %>
+<h1 class="current_category"><%= params[:category] %></h1>
 
-<%= link_to "Add Pizza", new_pizza_path %>
+<% if @pizzas.count == 0 %>
+    <h1>There are no Pizzas currently in this categroy</h1>
+<% else %>
+    <% @pizzas.each do |pizza| %>
+        <h2><%= link_to pizza.title, pizza_path(pizza) %></h2>
+    <% end %>
+<% end %>
